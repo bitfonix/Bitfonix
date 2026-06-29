@@ -18,7 +18,6 @@
             margin: 0%;
             padding: 0px;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
         }
 
         .hangtop {
@@ -39,11 +38,28 @@
         .one {
             width: 25%;
             height: inherit;
-            background-color: rgb(243, 243, 243);
+            background-color: #1a1a2e;
+            border-right: 2px solid #fd961a;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .dashboard-logo {
+            width: 80%;
+            max-width: 200px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .dashboard-logo img {
+            width: 100%;
+            height: auto;
         }
 
         .two {
-            background-color: rgba(0, 0, 0, 0.568);
+            background-color: #0f0f1f;
             background-blend-mode: multiply;
             background-size: 100% 100%;
             background-repeat: no-repeat;
@@ -53,7 +69,7 @@
         }
 
         .majo {
-            color: gray;
+            color: #999;
             font-size: 15px;
             text-align: center;
             padding: 10px;
@@ -77,7 +93,11 @@
             height: 159px;
             align-self: center;
             border: 2px solid #fd961a;
-            background-color: inherit;
+            background-color: rgba(253, 150, 26, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .theme {
@@ -88,33 +108,38 @@
             text-align: center;
             align-items: center;
             border: 2px solid #fd961a;
-            background-color: inherit;
+            background-color: rgba(253, 150, 26, 0.1);
+            border-radius: 8px;
         }
 
         .people {
             font-size: 30px;
             text-align: center;
-            color: white;
+            color: #fd961a;
+            font-weight: bold;
         }
 
         .peoples {
             font-size: 20px;
             text-align: center;
-            color: white;
+            color: #fff;
         }
 
         .add {
-            color: white;
+            color: #fd961a;
             width: 100%;
             text-decoration: none;
             text-align: center;
+            font-weight: 600;
         }
 
         .down-select {
             margin: auto;
             width: 80%;
             height: 500px;
-            background-color: rgba(0, 0, 0, 0.493);
+            background-color: rgba(26, 26, 46, 0.8);
+            border: 1px solid #fd961a;
+            border-radius: 8px;
         }
 
         .list {
@@ -124,7 +149,8 @@
             width: 100%;
             height: 50px;
             color: white;
-            background-color: #fd961a;
+            background: linear-gradient(90deg, #fd961a 0%, #e08500 100%);
+            border-radius: 8px 8px 0 0;
         }
 
         b {
@@ -139,7 +165,7 @@
             width: 100%;
             height: inherit;
             overflow: scroll;
-            background-color: white;
+            background-color: #1a1a2e;
         }
 
         .userdivs {
@@ -147,7 +173,7 @@
             overflow: scroll;
             display: none;
             height: inherit;
-            background-color: white;
+            background-color: #1a1a2e;
         }
 
         .warmer {
@@ -156,7 +182,7 @@
             padding: 10px;
             overflow: scroll;
             height: inherit;
-            background-color: rgb(255, 255, 255);
+            background-color: #1a1a2e;
         }
 
         .selldiv {
@@ -165,18 +191,20 @@
             display: none;
             height: inherit;
             padding:10px;
-            background-color: white;
+            background-color: #1a1a2e;
         }
 
         .buydiv {
             width: 100%;
             display: none;
             height: inherit;
-            background-color: rgb(46, 46, 46);
+            background-color: #0f0f1f;
         }
 
         .sertd {
             padding: 10px;
+            color: #fd961a;
+            font-weight: bold;
         }
 
         .userone {
@@ -186,24 +214,27 @@
             align-items: center;
             height: 60px;
             justify-content: space-around;
-            background-color: rgb(233, 233, 233);
+            background-color: #2a2a4e;
+            border-radius: 6px;
+            margin-bottom: 10px;
         }
 
         .cir {
             font-size: 25px;
             border-radius: 10000px;
             width: 5%;
-            background-color: #8d8d8d3f;
+            background-color: rgba(253, 150, 26, 0.3);
             display: flex;
             cursor: pointer;
             text-align: center;
             align-items: center;
+            color: #fd961a;
             height: 50px;
         }
 
         .eamilsamlaa {
             font-size: 13px;
-            color: rgb(109, 109, 109);
+            color: #ccc;
         }
 
         .usering {
@@ -216,12 +247,14 @@
             margin: auto;
             height: 190px;
             padding: 10px;
-            background-color: rgb(255, 255, 255);
+            background-color: #2a2a4e;
+            border-radius: 8px;
         }
 
         .dety {
             text-align: center;
-            color: rgb(117, 117, 117);
+            color: #fd961a;
+            font-weight: bold;
         }
 
         .lityu {
@@ -231,7 +264,8 @@
             font-size: 13px;
             display: flex;
             justify-content: space-around;
-            background-color: rgb(235, 235, 235);
+            background-color: #3a3a5e;
+            color: #fd961a;
         }
 
         .lity {
@@ -241,7 +275,8 @@
             font-size: 10px;
             display: flex;
             justify-content: space-around;
-            background-color: rgb(255, 255, 255);
+            background-color: #1a1a2e;
+            color: #ccc;
         }
 
         .lete {
@@ -251,8 +286,14 @@
             color: white;
             cursor: pointer;
             font-size: 12px;
-            background-color: rgb(255, 28, 28);
+            background-color: #fd961a;
             display: block;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .lete:hover {
+            background-color: #e08500;
         }
 
         .deldiv {
@@ -264,9 +305,8 @@
         }
 
         .suhert {
-            color: rgb(99, 99, 99);
+            color: #999;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
         }
 
         .secondhange {
@@ -274,20 +314,25 @@
             position: fixed;
             display: none;
             height: 900px;
-            background-color: rgba(0, 0, 0, 0.548);
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 999;
         }
 
         .insecond {
             width: 70%;
             padding: 10px;
             height: 250px;
-            background-color: rgb(255, 255, 255);
+            background-color: #2a2a4e;
             margin: auto;
+            border-radius: 8px;
+            border: 2px solid #fd961a;
         }
 
         .val {
             text-align: center;
             font-size: 13px;
+            color: #fd961a;
+            font-weight: bold;
         }
 
         .lityi {
@@ -298,7 +343,9 @@
             justify-content: space-between;
             display: flex;
             align-items: center;
-            background-color: rgb(240, 240, 240);
+            background-color: #3a3a5e;
+            color: #fd961a;
+            border-radius: 4px;
         }
 
         .analises {
@@ -309,8 +356,9 @@
             justify-content: space-between;
             display: flex;
             align-items: center;
-            color: gray;
-            background-color: rgb(255, 255, 255);
+            color: #ccc;
+            background-color: #1a1a2e;
+            border-radius: 4px;
         }
 
         .slider {
@@ -320,64 +368,94 @@
             border: none;
             color: white;
             cursor: pointer;
-            background-color: red;
+            background-color: #fd961a;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
+
+        .slider:hover {
+            background-color: #e08500;
+        }
+
         .holdson{
-            background-color: rgb(235, 235, 235);
-             width: 98%;   
-             display: none;
-             padding: 10px;
-             height: 200px;
-            box-shadow: 0px 1px 5px 5px rgb(216, 216, 216)  ;
+            background-color: #2a2a4e;
+            width: 98%;   
+            display: none;
+            padding: 10px;
+            height: 200px;
+            box-shadow: 0px 1px 5px 5px rgba(253, 150, 26, 0.2);
+            border-radius: 6px;
         }
-        .`{
-            background-color: rgb(235, 235, 235);
-             width: 98%;    
-             padding: 10px;
-             height: 200px;
-             display: none;
-            box-shadow: 0px 1px 5px 5px rgb(216, 216, 216)  ;
-        }
+
         .hold{
             width: 100%;  
         }
-.sonlist{
-    width: 100%;
-    height: 40px;
-    display: flex; 
-    align-items: center;
-    font-size: 12px;
-    justify-content: space-around; 
-}
-.sonlister{
-    width: 100%;
-    height: 40px;
-    color: gray;
-    display: flex; 
-    align-items: center;
-    font-size: 10px;
-    justify-content: space-around; 
-}
-.sonlisterin{
-    width: 100%;
-    height: 40px;
-    color: gray;
-    display: flex; 
-    align-items: center;
-    font-size: 10px;
-    justify-content: space-between; 
-}
-.caswap{
-    display: block;
-    float: right;
-    width: 10%;
-    cursor: pointer;
-padding: 10px;
-background-color: red;
-color: white;
-border: none;
-outline: none;
-}
+
+        .sonlist{
+            width: 100%;
+            height: 40px;
+            display: flex; 
+            align-items: center;
+            font-size: 12px;
+            justify-content: space-around;
+            color: #fd961a;
+        }
+
+        .sonlister{
+            width: 100%;
+            height: 40px;
+            color: #ccc;
+            display: flex; 
+            align-items: center;
+            font-size: 10px;
+            justify-content: space-around; 
+        }
+
+        .sonlisterin{
+            width: 100%;
+            height: 40px;
+            color: #ccc;
+            display: flex; 
+            align-items: center;
+            font-size: 10px;
+            justify-content: space-between; 
+        }
+
+        .caswap{
+            display: block;
+            float: right;
+            width: 10%;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #fd961a;
+            color: white;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .caswap:hover {
+            background-color: #e08500;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #fd961a;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e08500;
+        }
     </style>
     <div class="secondhange" id="aldiv">
         <br>
@@ -421,7 +499,7 @@ outline: none;
                 <b>hfg4vnreufjh84ef4jeh48tuh</b>
             </div>
             <button class="slider" id="closeval">
-                cansel
+                Cancel
             </button>
         </div>
     </div>
@@ -467,12 +545,18 @@ outline: none;
                     Delete user
                 </button>
                 <button class="lete" id="can">
-                    Cansel
+                    Cancel
                 </button>
             </div>
         </div>
     </div>
     <div class="container">
+        <div class="one">
+            <!-- Logo Section -->
+            <div class="dashboard-logo">
+                <img src="images/logo-dark.png" alt="Bitfonix Logo">
+            </div>
+        </div>
         <div class="two">
             <div class="long">
                 <div class="them">
@@ -563,7 +647,7 @@ outline: none;
                 </div>
                 <div class="warmer" id="armer"> 
                     <br>
-                    <b>Swap value</b>
+                    <b class="sertd">Swap value</b>
                     <br>
                     <br> 
                     <div class="hold">
@@ -585,7 +669,7 @@ outline: none;
                             <b>persentage</b>
                         </div>
                         <br>
-                        <hr>
+                        <hr style="border-color: #fd961a;">
                         <br>
                         <div class="sonlister"> 
                             <b>ETH</b>
@@ -596,7 +680,7 @@ outline: none;
                         </div>
                         <br>
                         <button  type="reset" class="caswap" id="sel">
-                            cansel
+                            Cancel
                         </button>
                     </div>
                     </div>
@@ -620,7 +704,7 @@ outline: none;
                             <b>persentage</b>
                         </div>
                         <br>
-                        <hr>
+                        <hr style="border-color: #fd961a;">
                         <br>
                         <div class="sonlister"> 
                             <b>ETH</b>
@@ -631,14 +715,14 @@ outline: none;
                         </div>
                         <br>
                         <button  type="reset" class="caswap" id="sel">
-                            cansel
+                            Cancel
                         </button>
                     </div>
                     </div>
                 </div>
                 <div class="selldiv" id="turn">   
                         <br>
-                    <b>Sell value</b>
+                    <b class="sertd">Sell value</b>
                     <br> 
                     <br>  
                     <div class="hold">
@@ -659,7 +743,7 @@ outline: none;
                             <b>Phrase</b> 
                         </div>
                         <br>
-                        <hr>
+                        <hr style="border-color: #fd961a;">
                         <br>
                         <div class="sonlisterin"> 
                             <b>ETH</b>
@@ -669,7 +753,7 @@ outline: none;
                         </div>
                         <br>
                         <button  type="reset" class="caswap" id="btnse">
-                            cansel
+                            Cancel
                         </button>
                     </div>
                     </div>
