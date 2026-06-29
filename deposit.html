@@ -7,76 +7,81 @@
   <link rel="stylesheet" href="userside.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
-    /* Minimal page-specific styles; adjust or move into userside.css as needed */
-    body { background:#f5f7fb; font-family: Arial, Helvetica, sans-serif; }
-    .deposit-container { max-width:700px;margin:40px auto;padding:24px;background:#fff;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,0.08); }
-    .deposit-header { display:flex;align-items:center;gap:12px;margin-bottom:12px; }
-    .deposit-header h1{font-size:20px;margin:0}
-    .deposit-details { margin-top:10px; }
-    .detail { display:flex;justify-content:space-between;padding:12px 10px;border:1px solid #eee;border-radius:6px;margin-bottom:10px;align-items:center }
-    .detail .label{color:#666;font-size:13px}
-    .detail strong{display:block;font-size:16px}
-    .copy-btn{background:#0b74de;border:none;color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer}
-    .note { margin-top:14px;color:#333 }
-    .back-link { display:inline-block;margin-top:18px;text-decoration:none;color:#0b74de }
+    /* Brand colors: black background, orange accents */
+    :root{--brand-black:#0b0b0b;--brand-orange:#ff7a00;--muted:#bdbdbd}
+    html,body{height:100%;margin:0;font-family:Helvetica,Arial,sans-serif;background:var(--brand-black);color:#fff}
+    .deposit-wrap{max-width:960px;margin:48px auto;padding:28px;background:linear-gradient(180deg,#0f0f0f 0%, #0b0b0b 100%);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6);border:1px solid rgba(255,122,0,0.06)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:36px}
+    .brand h1{font-size:20px;margin:0;color:var(--brand-orange)}
+    .lead{color:var(--muted);margin-top:10px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+    .card{background:#0f0f0f;border:1px solid rgba(255,255,255,0.03);padding:16px;border-radius:8px}
+    .label{font-size:12px;color:var(--muted);margin-bottom:6px}
+    .value{font-weight:700;color:#fff;font-size:16px}
+    .copy-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .copy-btn{background:var(--brand-orange);border:none;color:#0b0b0b;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:700}
+    .copy-btn:disabled{opacity:0.7;cursor:default}
+    .note{color:var(--muted);margin-top:14px}
+    .back{display:inline-block;margin-top:18px;color:var(--brand-orange);text-decoration:none}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <div class="deposit-container" role="main" aria-labelledby="deposit-title">
-    <div class="deposit-header">
-      <i class="fas fa-university" style="font-size:28px;color:#0b74de" aria-hidden="true"></i>
-      <h1 id="deposit-title">Deposit Instructions</h1>
+  <div class="deposit-wrap" role="main" aria-labelledby="deposit-title">
+    <div class="brand">
+      <img src="images/logo-dark.png" alt="Bitfonix logo" />
+      <h1 id="deposit-title">Deposit to Bitfonix</h1>
     </div>
 
-    <p class="note">Use the details below to fund your Bitfonix wallet. Copy the account details or scan any QR code provided by your banking/payment app. Make sure you use a bank account registered in your own legal name.</p>
+    <p class="lead">Fund your Bitfonix wallet using the details below. For security and regulatory compliance, use a bank account registered in your own legal name. Deposits from other names may be delayed or rejected.</p>
 
-    <div class="deposit-details" aria-describedby="deposit-note">
-      <div class="detail">
-        <div>
-          <div class="label">Provider</div>
-          <strong>PalmPay</strong>
-        </div>
-        <div>
-          <button class="copy-btn" data-copy="PalmPay" aria-label="Copy provider">Copy</button>
+    <div class="grid">
+      <div class="card">
+        <div class="label">Provider</div>
+        <div class="copy-row">
+          <div>
+            <div class="value">PalmPay</div>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Mobile payment provider</div>
+          </div>
+          <button class="copy-btn" data-copy="PalmPay" aria-label="Copy provider">COPY</button>
         </div>
       </div>
 
-      <div class="detail">
-        <div>
-          <div class="label">Bank</div>
-          <strong>PalmPay Limited (PalmPay)</strong>
-        </div>
-        <div>
-          <button class="copy-btn" data-copy="PalmPay Limited (PalmPay)" aria-label="Copy bank">Copy</button>
-        </div>
-      </div>
-
-      <div class="detail">
-        <div>
-          <div class="label">Account Number</div>
-          <strong id="account-number">707 444 1837</strong>
-        </div>
-        <div>
-          <button class="copy-btn" data-copy="707 444 1837" aria-label="Copy account number">Copy</button>
+      <div class="card">
+        <div class="label">Bank</div>
+        <div class="copy-row">
+          <div>
+            <div class="value">PalmPay Limited (PalmPay)</div>
+          </div>
+          <button class="copy-btn" data-copy="PalmPay Limited (PalmPay)" aria-label="Copy bank">COPY</button>
         </div>
       </div>
 
-      <div class="detail">
-        <div>
-          <div class="label">Account Name</div>
-          <strong id="account-name">VENDR OCC BITFONIX</strong>
+      <div class="card">
+        <div class="label">Account Number</div>
+        <div class="copy-row">
+          <div>
+            <div id="account-number" class="value">707 444 1837</div>
+          </div>
+          <button class="copy-btn" data-copy="707 444 1837" aria-label="Copy account number">COPY</button>
         </div>
-        <div>
-          <button class="copy-btn" data-copy="VENDR OCC BITFONIX" aria-label="Copy account name">Copy</button>
+      </div>
+
+      <div class="card">
+        <div class="label">Account Name</div>
+        <div class="copy-row">
+          <div>
+            <div id="account-name" class="value">VENDR OCC BITFONIX</div>
+          </div>
+          <button class="copy-btn" data-copy="VENDR OCC BITFONIX" aria-label="Copy account name">COPY</button>
         </div>
       </div>
     </div>
 
-    <p class="note" id="deposit-note">
-      After making the payment, save the transaction reference and contact support if you need help with confirmation. Deposits from accounts not registered in your legal name may be rejected or delayed.
-    </p>
+    <p class="note">After completing the payment, save the transaction reference and keep proof of payment. If you need confirmation assistance, contact support and share your payment reference. Remember withdrawals must be made to the same bank account used for funding.</p>
 
-    <a href="userside.html" class="back-link">← Back to Wallet</a>
+    <a class="back" href="userside.html">← Back to Wallet</a>
   </div>
 
   <script>
@@ -85,22 +90,17 @@
       if (!btn) return;
       const text = btn.getAttribute('data-copy');
       if (!text) return;
+      // copy and provide feedback
+      function giveFeedback(button){
+        const prev = button.textContent;
+        button.textContent = 'COPIED';
+        button.disabled = true;
+        setTimeout(()=>{ button.textContent = prev; button.disabled = false; }, 1400);
+      }
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(() => {
-          const prev = btn.textContent;
-          btn.textContent = 'Copied';
-          btn.disabled = true;
-          setTimeout(() => { btn.textContent = prev; btn.disabled = false; }, 1500);
-        }).catch(() => {
-          // Fallback
-          alert('Copied: ' + text);
-        });
+        navigator.clipboard.writeText(text).then(()=> giveFeedback(btn)).catch(()=> { try{ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); giveFeedback(btn);}catch(err){ alert('Copied: '+text); } });
       } else {
-        // older browsers
-        const ta = document.createElement('textarea');
-        ta.value = text; document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); alert('Copied: ' + text); } catch (err) { alert('Copy failed: ' + text); }
-        ta.remove();
+        try{ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); giveFeedback(btn);}catch(err){ alert('Copied: '+text); }
       }
     });
   </script>
