@@ -33,7 +33,7 @@
       <div class="user-profile">
         <img src="https://via.placeholder.com/40" alt="Profile" class="profile-avatar">
         <div class="profile-info">
-          <p class="profile-name">Samuel Frank</p>
+          <p class="profile-name"></p>
           <p class="profile-status">Verified</p>
         </div>
       </div>
@@ -48,9 +48,9 @@
       <div class="card-header">
         <div>
           <h1>Your Wallet</h1>
-          <p class="welcome">Welcome back, <strong>Samuel Frank</strong></p>
+          <p class="welcome">Welcome back</p>
         </div>
-        <span class="kyc-badge kyc-verified">
+        <span id="premium-badge" class="kyc-badge kyc-verified">
           <i class="fas fa-check-circle"></i> Verified
         </span>
       </div>
@@ -127,6 +127,11 @@
         <button class="btn secondary disabled">
           <i class="fas fa-arrow-up"></i> Withdraw (Locked)
         </button>
+        <a href="deposit.html" target="_blank" style="text-decoration:none;">
+          <button class="btn primary deposit-btn">
+            <i class="fas fa-credit-card"></i> Deposit
+          </button>
+        </a>
         <button class="btn outline">
           <i class="fas fa-history"></i> View History
         </button>
@@ -150,29 +155,17 @@
         <div id="notification" class="notification"></div>
       </div>
 
-      <!-- SECURITY WARNING - PROFESSIONAL CARD -->
-      <div class="security-warning">
-        <div class="warning-header">
-          <i class="fas fa-shield-alt"></i>
-          <h3>Account Verification Required</h3>
+      <!-- ACCOUNT RESTRICTION MODAL (hidden by default) -->
+      <div id="restriction-modal" class="restriction-modal" style="display:none;">
+        <div class="restriction-overlay"></div>
+        <div class="restriction-content">
+          <button id="restriction-close" class="restriction-close" aria-label="Close">✕</button>
+          <h2>⚠️ Account Restriction Notice</h2>
+          <p>Your Bitfonix account has been temporarily restricted due to prolonged inactivity. As a result, deposits, withdrawals, transfers, trading, and bonus access are currently unavailable.</p>
+          <p>To restore full account functionality, fund your Bitfonix wallet using a bank account registered in your own legal name. For security and regulatory compliance, all future withdrawals must also be made to the same bank account used for funding.</p>
+          <p>Once your deposit is successfully confirmed, your account restriction and frozen bonus will be reviewed for automatic removal.</p>
+          <p><strong>Bitfonix Security &amp; Compliance Team</strong></p>
         </div>
-        <p class="warning-text">
-          Dear <strong>Samuel Frank</strong>, your account is currently under <strong>Tier 2 verification</strong>. 
-          For security and compliance reasons, access to funding, withdrawals, trading, and coupon redemption is 
-          temporarily restricted.
-        </p>
-        <p class="warning-text">
-          Kindly complete your identity verification to unlock all wallet features. Upon successful verification, 
-          your account will be <strong>automatically upgraded to KYC Tier 3.1</strong>.
-        </p>
-        <p class="warning-note">
-          <i class="fas fa-info-circle"></i>
-          <strong>Important:</strong> Your coupon code voucher will become active only after verification 
-          and will automatically expire <strong>24 hours after approval</strong>.
-        </p>
-        <button class="btn verify">
-          <i class="fas fa-check-circle"></i> Verify Account Now
-        </button>
       </div>
 
     </section>
