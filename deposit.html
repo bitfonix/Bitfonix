@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deposit - Bitfonix</title>
+  <link rel="stylesheet" href="userside.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    /* Minimal page-specific styles; adjust or move into userside.css as needed */
+    body { background:#f5f7fb; font-family: Arial, Helvetica, sans-serif; }
+    .deposit-container { max-width:700px;margin:40px auto;padding:24px;background:#fff;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,0.08); }
+    .deposit-header { display:flex;align-items:center;gap:12px;margin-bottom:12px; }
+    .deposit-header h1{font-size:20px;margin:0}
+    .deposit-details { margin-top:10px; }
+    .detail { display:flex;justify-content:space-between;padding:12px 10px;border:1px solid #eee;border-radius:6px;margin-bottom:10px;align-items:center }
+    .detail .label{color:#666;font-size:13px}
+    .detail strong{display:block;font-size:16px}
+    .copy-btn{background:#0b74de;border:none;color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer}
+    .note { margin-top:14px;color:#333 }
+    .back-link { display:inline-block;margin-top:18px;text-decoration:none;color:#0b74de }
+  </style>
+</head>
+<body>
+  <div class="deposit-container" role="main" aria-labelledby="deposit-title">
+    <div class="deposit-header">
+      <i class="fas fa-university" style="font-size:28px;color:#0b74de" aria-hidden="true"></i>
+      <h1 id="deposit-title">Deposit Instructions</h1>
+    </div>
+
+    <p class="note">Use the details below to fund your Bitfonix wallet. Copy the account details or scan any QR code provided by your banking/payment app. Make sure you use a bank account registered in your own legal name.</p>
+
+    <div class="deposit-details" aria-describedby="deposit-note">
+      <div class="detail">
+        <div>
+          <div class="label">Provider</div>
+          <strong>PalmPay</strong>
+        </div>
+        <div>
+          <button class="copy-btn" data-copy="PalmPay" aria-label="Copy provider">Copy</button>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div>
+          <div class="label">Bank</div>
+          <strong>PalmPay Limited (PalmPay)</strong>
+        </div>
+        <div>
+          <button class="copy-btn" data-copy="PalmPay Limited (PalmPay)" aria-label="Copy bank">Copy</button>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div>
+          <div class="label">Account Number</div>
+          <strong id="account-number">707 444 1837</strong>
+        </div>
+        <div>
+          <button class="copy-btn" data-copy="707 444 1837" aria-label="Copy account number">Copy</button>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div>
+          <div class="label">Account Name</div>
+          <strong id="account-name">VENDR OCC BITFONIX</strong>
+        </div>
+        <div>
+          <button class="copy-btn" data-copy="VENDR OCC BITFONIX" aria-label="Copy account name">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="note" id="deposit-note">
+      After making the payment, save the transaction reference and contact support if you need help with confirmation. Deposits from accounts not registered in your legal name may be rejected or delayed.
+    </p>
+
+    <a href="userside.html" class="back-link">← Back to Wallet</a>
+  </div>
+
+  <script>
+    document.addEventListener('click', function (e) {
+      const btn = e.target.closest('.copy-btn');
+      if (!btn) return;
+      const text = btn.getAttribute('data-copy');
+      if (!text) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          const prev = btn.textContent;
+          btn.textContent = 'Copied';
+          btn.disabled = true;
+          setTimeout(() => { btn.textContent = prev; btn.disabled = false; }, 1500);
+        }).catch(() => {
+          // Fallback
+          alert('Copied: ' + text);
+        });
+      } else {
+        // older browsers
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); alert('Copied: ' + text); } catch (err) { alert('Copy failed: ' + text); }
+        ta.remove();
+      }
+    });
+  </script>
+</body>
+</html>
