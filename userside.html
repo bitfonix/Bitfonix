@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bitfonix Wallet</title>
+  <title>Bitfonix Wallet Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="userside.css">
 </head>
 
@@ -13,84 +14,200 @@
 
   <!-- HEADER -->
   <header class="wallet-header">
-    <div class="logo">Bitfonix</div>
-    <div class="menu">&#9776;</div>
+    <div class="header-left">
+      <div class="logo">
+        <i class="fas fa-wallet"></i> Bitfonix
+      </div>
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active">Dashboard</a>
+        <a href="#" class="nav-item">Transactions</a>
+        <a href="#" class="nav-item">Settings</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <button class="btn-notification">
+        <i class="fas fa-bell"></i>
+        <span class="notification-badge">2</span>
+      </button>
+      <div class="user-profile">
+        <img src="https://via.placeholder.com/40" alt="Profile" class="profile-avatar">
+        <div class="profile-info">
+          <p class="profile-name">Samuel Frank</p>
+          <p class="profile-status">Verified</p>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- WALLET CARD -->
-  <section class="wallet-card">
+  <!-- MAIN CONTENT -->
+  <main class="wallet-main">
 
-    <h1>BITFONIX WALLET</h1>
-    <p class="welcome">WELCOME BACK, <strong>SAMUEL FRANK</strong></p>
-    <p class="kyc">ACCOUNT STATUS: <span id="account-type">Normal</span> <span id="premium-badge"></span></p>
+    <!-- WALLET OVERVIEW CARD -->
+    <section class="wallet-card">
+      <div class="card-header">
+        <div>
+          <h1>Your Wallet</h1>
+          <p class="welcome">Welcome back, <strong>Samuel Frank</strong></p>
+        </div>
+        <span class="kyc-badge kyc-verified">
+          <i class="fas fa-check-circle"></i> Verified
+        </span>
+      </div>
 
-    <!-- TABS -->
-    <div class="tabs">
-      <span>INVESTING</span>
-      <span>MINING</span>
-      <span>TRADING</span>
-      <span class="active">TOTAL BITCOIN</span>
-    </div>
+      <!-- ACCOUNT STATUS -->
+      <div class="account-status">
+        <div class="status-item">
+          <p>Account Status</p>
+          <h3 id="account-type">Normal Account</h3>
+        </div>
+        <div class="status-item">
+          <p>Verification Level</p>
+          <h3>Tier 3.1 <span class="badge-primary">Premium</span></h3>
+        </div>
+      </div>
 
-    <!-- BTC VALUES -->
-    <div class="btc-values">
-      <div>0.0007 BTC</div>
-      <div>0.0011 BTC</div>
-      <div>0.0003 BTC</div>
-      <div class="total">0.0021 BTC</div>
-    </div>
+      <!-- TABS -->
+      <div class="tabs">
+        <button class="tab-btn" data-tab="total">
+          <i class="fas fa-coins"></i> Total Balance
+        </button>
+        <button class="tab-btn" data-tab="investing">
+          <i class="fas fa-chart-line"></i> Investing
+        </button>
+        <button class="tab-btn" data-tab="mining">
+          <i class="fas fa-hammer"></i> Mining
+        </button>
+        <button class="tab-btn" data-tab="trading">
+          <i class="fas fa-exchange-alt"></i> Trading
+        </button>
+      </div>
 
-    <!-- BALANCE -->
-    <div class="row">
-      <span>Balance</span>
-      <strong id="balance">$0.00</strong>
-    </div>
+      <!-- BTC VALUES - RESPONSIVE GRID -->
+      <div class="btc-values">
+        <div class="btc-item">
+          <span class="btc-label">Total Bitcoin</span>
+          <span class="btc-value">0.0021 BTC</span>
+          <span class="btc-usd">≈ $89.45 USD</span>
+        </div>
+        <div class="btc-item">
+          <span class="btc-label">Investing</span>
+          <span class="btc-value">0.0007 BTC</span>
+          <span class="btc-usd">≈ $29.82 USD</span>
+        </div>
+        <div class="btc-item">
+          <span class="btc-label">Mining</span>
+          <span class="btc-value">0.0011 BTC</span>
+          <span class="btc-usd">≈ $46.87 USD</span>
+        </div>
+        <div class="btc-item">
+          <span class="btc-label">Trading</span>
+          <span class="btc-value">0.0003 BTC</span>
+          <span class="btc-usd">≈ $12.76 USD</span>
+        </div>
+      </div>
 
-    <!-- NAIRA TOTAL -->
-    <div class="naira">
-      NGN 15,235,977.05
-    </div>
+      <!-- BALANCE SECTION -->
+      <div class="balance-section">
+        <div class="balance-item">
+          <span class="balance-label">USD Balance</span>
+          <strong class="balance-value" id="balance">$0.00</strong>
+        </div>
+        <div class="balance-item">
+          <span class="balance-label">NGN Equivalent</span>
+          <strong class="balance-value">₦ 15,235,977.05</strong>
+        </div>
+      </div>
 
-    <!-- ACTION BUTTONS (DISABLED LOOK) -->
-    <button class="btn primary disabled">FUND WALLET (LOCKED)</button>
+      <!-- ACTION BUTTONS - RESPONSIVE LAYOUT -->
+      <div class="action-buttons">
+        <button class="btn primary disabled">
+          <i class="fas fa-wallet"></i> Fund Wallet (Locked)
+        </button>
+        <button class="btn secondary disabled">
+          <i class="fas fa-arrow-up"></i> Withdraw (Locked)
+        </button>
+        <button class="btn outline">
+          <i class="fas fa-history"></i> View History
+        </button>
+      </div>
 
-    <!-- COUPON -->
-    <div class="coupon">
-      <input type="text" id="coupon-input" placeholder="COUPON CODE">
-      <button class="btn outline" id="apply-coupon-btn">APPLY COUPON</button>
-    </div>
-    
-    <div id="notification"></div>
+      <!-- COUPON SECTION -->
+      <div class="coupon-section">
+        <label for="coupon-input" class="coupon-label">Have a coupon code?</label>
+        <div class="coupon-input-group">
+          <input 
+            type="text" 
+            id="coupon-input" 
+            class="coupon-input"
+            placeholder="Enter coupon code"
+            disabled
+          >
+          <button class="btn outline coupon-btn" id="apply-coupon-btn" disabled>
+            <i class="fas fa-check"></i> Apply
+          </button>
+        </div>
+        <div id="notification" class="notification"></div>
+      </div>
 
-    <!-- WITHDRAW -->
-    <button class="btn outline full disabled">WITHDRAW (LOCKED)</button>
+      <!-- SECURITY WARNING - PROFESSIONAL CARD -->
+      <div class="security-warning">
+        <div class="warning-header">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Account Verification Required</h3>
+        </div>
+        <p class="warning-text">
+          Dear <strong>Samuel Frank</strong>, your account is currently under <strong>Tier 2 verification</strong>. 
+          For security and compliance reasons, access to funding, withdrawals, trading, and coupon redemption is 
+          temporarily restricted.
+        </p>
+        <p class="warning-text">
+          Kindly complete your identity verification to unlock all wallet features. Upon successful verification, 
+          your account will be <strong>automatically upgraded to KYC Tier 3.1</strong>.
+        </p>
+        <p class="warning-note">
+          <i class="fas fa-info-circle"></i>
+          <strong>Important:</strong> Your coupon code voucher will become active only after verification 
+          and will automatically expire <strong>24 hours after approval</strong>.
+        </p>
+        <button class="btn verify">
+          <i class="fas fa-check-circle"></i> Verify Account Now
+        </button>
+      </div>
 
-    <!-- WARNING / VERIFICATION NOTICE -->
-    <div class="security-warning">
-      <h3>⚠ Account Verification Required</h3>
-      <p>
-        Dear <strong>Samuel Frank</strong>, your account is currently under
-        <strong>Tier 2 verification</strong>. For security and compliance reasons,
-        access to funding, withdrawals, trading, and coupon redemption is
-        temporarily restricted.
-      </p>
+    </section>
 
-      <p>
-        Kindly complete your identity verification to unlock all wallet features.
-        Upon successful verification, your account will be
-        <strong>automatically upgraded to KYC Tier 3.1</strong>.
-      </p>
+    <!-- QUICK STATS CARDS -->
+    <section class="quick-stats">
+      <div class="stat-card">
+        <div class="stat-icon transactions">
+          <i class="fas fa-exchange-alt"></i>
+        </div>
+        <div class="stat-content">
+          <p class="stat-label">Recent Transactions</p>
+          <h3 class="stat-value">24</h3>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon pending">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="stat-content">
+          <p class="stat-label">Pending Verifications</p>
+          <h3 class="stat-value">1</h3>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon success">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="stat-content">
+          <p class="stat-label">Account Age</p>
+          <h3 class="stat-value">45 Days</h3>
+        </div>
+      </div>
+    </section>
 
-      <p class="note">
-        ⏳ <strong>Important:</strong> Your coupon code voucher will become active
-        only after verification and will automatically expire
-        <strong>24 hours after approval</strong>.
-      </p>
-
-      <button class="btn verify">VERIFY ACCOUNT NOW</button>
-    </div>
-
-  </section>
+  </main>
 
 </div>
 
